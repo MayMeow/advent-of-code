@@ -1,0 +1,25 @@
+{
+    "name": "maymeow/advent-of-code",
+    "autoload": {
+        "psr-4": {
+            "MayMeow\\AdventOfCode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MayMeow\\AdventOfCode\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "May",
+            "email": "may@maymeow.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    }
+}
