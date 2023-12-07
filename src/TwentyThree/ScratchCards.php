@@ -2,6 +2,11 @@
 
 namespace MayMeow\AdventOfCode\TwentyThree;
 
+/**
+ * ScratchCards
+ * 
+ * Day 04 of Advent of Code 2023
+ */
 final class ScratchCards
 {
     protected array $cards = [];

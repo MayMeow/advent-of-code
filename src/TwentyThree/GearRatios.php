@@ -2,6 +2,11 @@
 
 namespace MayMeow\AdventOfCode\TwentyThree;
 
+/**
+ * GearRatios
+ * 
+ * Day 03 of Advent of Code 2023
+ */
 final class GearRatios
 {
     protected array $numbers = [];
