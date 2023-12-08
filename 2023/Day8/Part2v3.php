@@ -29,8 +29,8 @@ $test3 = 'LR
 22Z = (22B, 22B)
 XXX = (XXX, XXX)';
 
-// $input = $test3;
-$input = file_get_contents('./input.txt');
+$input = $test3;
+// $input = file_get_contents('./input.txt');
 
 //  explode and remove empty values from array
 $map = array_filter(explode("\n", $input));
@@ -53,7 +53,7 @@ foreach ($map as $value) {
     ];
 }
 
-// dijkstra to find all paths
+// Breadth-First Search
 function bfs($start, $end, $tree) {
     $queue = new SplQueue();
     $queue->enqueue([$start]);
