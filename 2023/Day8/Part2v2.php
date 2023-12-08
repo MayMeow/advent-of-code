@@ -56,19 +56,24 @@ $currentPoints = $startPoints;
 
 $startPointsCount = count($startPoints);
 
+$leftRightLength = strlen($leftRight);
+$mapPoints = array_column($map, 'point');
+
 while(!isEverythingAtEnd($currentPoints, $startPointsCount)) {
     foreach ($currentPoints as &$point) {
-        $point = move($point[$leftRight[$i]], $map);
-        array_values($currentPoints);
+        $point = move2($point[$leftRight[$i % $leftRightLength]], $map, $mapPoints);
     }    
 
-    $i++;
-    if ($i >= strlen($leftRight) ) {
-        $i = 0;
-    }    
+    $i = ($i + 1) % $leftRightLength;
     $steps ++;
 
-    echo $steps . ' - ' . implode(', ', array_column($currentPoints, 'point')) . ' next to: ' . $leftRight[$i] . PHP_EOL;
+    echo $steps . ' - ' . implode(', ', array_column($currentPoints, 'point')) . ' next to go to the: ' . $leftRight[$i] . PHP_EOL;
+}
+
+function move2($to, $map, $mapPoints)
+{
+    $point = array_search($to, $mapPoints); 
+    return $map[$point];
 }
 
 function move($to, $map)
