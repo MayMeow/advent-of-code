@@ -15,7 +15,7 @@ foreach ($histories as $index => $history) {
     $rows[$index][] = $history;
     $row = $history;
 
-    while (array_sum($row) !== 0) {
+    while (array_sum($row) != 0) {
         $row = calculateNexRow($row);
         $rows[$index][] = $row;
     }
