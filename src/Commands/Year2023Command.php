@@ -33,7 +33,7 @@ class Year2023Command extends Command
             'Part 1: ' . (new Day08())->part1(),
             'Part 2: '
         ]);
-        $io->writeln('<fg=green>--- Day 8: Haunted Wasteland ---</>');
+        $io->writeln('<fg=green>--- Day 9: Mirage Maintenance ---</>');
         $io->listing([
             'Part 1: ' . (new Day09())->part1(),
             'Part 2: '
