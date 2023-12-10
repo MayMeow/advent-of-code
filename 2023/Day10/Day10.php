@@ -34,9 +34,6 @@ foreach ($map as $index => $row) {
     }
 }
 
-
-$start = $map[$x][$y];
-
 function findNext($x, $y, $map, $pipes): array
 {
     $next =[];
@@ -45,6 +42,11 @@ function findNext($x, $y, $map, $pipes): array
         [$x,$y] = $start;
         [$dx, $dy] = $destination;
         $pipe = $map[$dx][$dy];
+
+        // / connected to each pipe when tere is connection from it
+        if ($pipe == 'S') {
+            return true;
+        }
 
         foreach($pipes[$pipe] as $direction) {
             [$px, $py] = $direction;
@@ -61,13 +63,13 @@ function findNext($x, $y, $map, $pipes): array
     };
 
     $getPipe = function($x, $y) use ($map, $pipes): array {
-        if ($index = array_search($map[$x][$y], $pipes)) {
-            return [
-                $pipes[$index],
-            ];
+        $pipe = $map[$x][$y];
+
+        if (!isset($pipes[$pipe]) || $pipe == 'S') {
+            return $pipes;
         }
 
-        return $pipes;
+        return [$pipes[$pipe]];
     };
 
     foreach ($getPipe($x,$y) as $index => $pipe)
@@ -116,12 +118,11 @@ function findNext($x, $y, $map, $pipes): array
     return $next;
 }
 
-$x = 1;
-$y = 3;
+$x = 2;
+$y = 1;
 $next = findNext($x, $y, $map, $pipes);
 
-
-echo 'Possible connections: ' . count($next) . PHP_EOL;
+echo count($next) . ' Possible connections for [' . $x . ',' . $y . ']' . ' ' . $map[$x][$y] . PHP_EOL;
 foreach ($next as $index => $value) {
     echo 'Possible connection ' . $index . ': ' . $value['mx'] . ' ' . $value['my'] . ' ' . $map[$value['mx']][$value['my']] . PHP_EOL;
 }
