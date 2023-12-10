@@ -7,6 +7,7 @@ SJ.L7
 LJ...';
 
 $input = $test;
+// $input = file_get_contents('input.txt');
 
 // [-1,-1] [-1,0] [-1,1]
 // [0,-1]  [0,0]  [0,1]
@@ -20,7 +21,7 @@ $pipes = [
     '7' => [[1, 0], [0, -1]], // 90 degree left (S/W)
     'F' => [[1, 0], [0, 1]], // 90 degree right (S/E)
     // '.' => [[0, 0]], // ground (no direction from here)
-    'S' => [[0, 0]], // starting positifion
+    'S' => [[0, 0]], // starting position - connect to all pipes based pipe's exits
 ];
 
 // 2D array
@@ -34,10 +35,10 @@ foreach ($map as $index => $row) {
     }
 }
 
-function findNext($x, $y, $map, $pipes): array
-{
-    $next =[];
+$next = [];
 
+function findNext($x, $y, $map, $pipes, $next): array
+{
     $areConnected = function (array $start, array $destination) use ($map, $pipes): bool {
         [$x,$y] = $start;
         [$dx, $dy] = $destination;
@@ -101,7 +102,6 @@ function findNext($x, $y, $map, $pipes): array
             $possibleNext = [
                 'mx' => $dx,
                 'my' => $dy,
-                'p' => [$x, $y],
             ];
 
             if (array_search($possibleNext, $next) !== false) {
@@ -113,19 +113,26 @@ function findNext($x, $y, $map, $pipes): array
             }
         }
     }
-    
 
     return $next;
 }
 
-$x = 2;
+/*$x = 2;
 $y = 1;
-$next = findNext($x, $y, $map, $pipes);
+*/
 
+/* foreach($map as $index => $row) {
+    foreach($row as $rIndex => $value) {
+        if ($value == '.') {
+            continue;
+        }
+        $next = findNext($index, $rIndex, $map, $pipes, $next);
+    }
+}*/
+
+$next = findNext($x, $y, $map, $pipes, $next);
 echo count($next) . ' Possible connections for [' . $x . ',' . $y . ']' . ' ' . $map[$x][$y] . PHP_EOL;
 foreach ($next as $index => $value) {
     echo 'Possible connection ' . $index . ': ' . $value['mx'] . ' ' . $value['my'] . ' ' . $map[$value['mx']][$value['my']] . PHP_EOL;
 }
-
-// var_dump($next);
 
