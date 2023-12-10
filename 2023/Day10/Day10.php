@@ -6,8 +6,8 @@ SJ.L7
 |F--J
 LJ...';
 
-$input = $test;
-// $input = file_get_contents('input.txt');
+// $input = $test;
+$input = file_get_contents('input.txt');
 
 // [-1,-1] [-1,0] [-1,1]
 // [0,-1]  [0,0]  [0,1]
@@ -34,6 +34,7 @@ foreach ($map as $index => $row) {
         [$x, $y] = [$index, array_search('S', $row)];
     }
 }
+
 
 $next = [];
 
@@ -100,8 +101,8 @@ function findNext($x, $y, $map, $pipes, $next): array
             }
 
             $possibleNext = [
-                'mx' => $dx,
-                'my' => $dy,
+                $dx,
+                $dy,
             ];
 
             if (array_search($possibleNext, $next) !== false) {
@@ -130,9 +131,31 @@ $y = 1;
     }
 }*/
 
-$next = findNext($x, $y, $map, $pipes, $next);
-echo count($next) . ' Possible connections for [' . $x . ',' . $y . ']' . ' ' . $map[$x][$y] . PHP_EOL;
-foreach ($next as $index => $value) {
-    echo 'Possible connection ' . $index . ': ' . $value['mx'] . ' ' . $value['my'] . ' ' . $map[$value['mx']][$value['my']] . PHP_EOL;
+$connections[] = [$x, $y];
+$next = $connections;
+$hasNext = true;
+
+// $next = findNext($x, $y, $map, $pipes, $next);
+
+while($hasNext) {
+    foreach($next as  $index => $possibleNext) {
+        [$x, $y] = [$possibleNext[0], $possibleNext[1]];
+        echo 'Checking [' . $x . ',' . $y . ']' . PHP_EOL;
+        $next = findNext($x, $y, $map, $pipes, $next);
+
+        foreach($next as $nIndex => $nValue) {
+            if (array_search([$nValue[0], $nValue[1]], $connections) !== false) {
+                unset($next[$nIndex]);
+            } else {
+                $connections[] = [$nValue[0], $nValue[1]];
+            }
+        }
+
+        $hasNext = count($next) > 0;
+    }
 }
+
+// var_dump($connections);
+
+echo 'Count ' . count($connections) / 2 . PHP_EOL;
 
