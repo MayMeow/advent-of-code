@@ -1,0 +1,24 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Advent of code",
+  "homepage": "https://github.com/MayMeow/advent-of-code#readme",
+  "bugs": {
+    "url": "https://github.com/MayMeow/advent-of-code/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayMeow/advent-of-code.git"
+  },
+  "license": "ISC",
+  "author": "May Meow",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "2025-day-01-part-1": "node ./2025/01/part1.js ./2025/01/input.txt"
+  }
+}
