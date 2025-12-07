@@ -3,7 +3,9 @@
 I spent Day 3 hanging out in the lobby with a pile of battery banks and a stubborn escalator. Here is how I cracked both puzzles using a pair of lean JavaScript scripts (`part1.js` and `part2.js`).
 
 ## Part 1 – Two batteries, one number
-Each bank is a string of digits. I needed the largest possible two-digit number that can be formed by picking any two digits in their original order. Instead of checking all pairs, I walked through the bank once while tracking the best "first" digit seen so far. Every time I read a new digit I tried pairing it with that best first digit and updated the maximum. If the new digit beat the best first digit, I promoted it. This linear pass per bank gave me the overall sum quickly.
+Each bank is a string of digits. I needed the largest possible two-digit value that preserves order. Rather than evaluate every pair, I sweep the string once while tracking the best "first" digit seen so far. Every new digit forms a candidate pair with that best digit; if the candidate beats the running maximum, I store it, and if the new digit is even better as a first digit, I promote it. This greedy pass extracts the answer for a bank in linear time.
+
+**Complexity:** For `n` banks whose lengths sum to `L`, the runtime is `O(L)` and the extra memory stays at `O(1)`.
 
 ## Part 2 – Twelve digits to rule the escalator
 The safety override demanded far more juice: exactly twelve digits per bank. This morphs into the classic "remove k digits to maximize the remaining sequence" problem. I used a monotonic stack:
@@ -14,6 +16,8 @@ The safety override demanded far more juice: exactly twelve digits per bank. Thi
 4. After processing the whole bank, trim any extra digits from the end until only twelve remain.
 
 Converting the resulting 12-digit string to `BigInt` kept the totals precise, and summing across all banks produced the final answer.
+
+**Complexity:** The same total input length `L` drives this part. Each digit is pushed and popped at most once, so the runtime is `O(L)` with `O(12)` extra storage per bank (effectively `O(1)`).
 
 ## Lessons learned
 - Greedy strategies shine when the problem boils down to keeping digits in order but maximizing lexicographic value.
