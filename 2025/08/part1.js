@@ -22,7 +22,7 @@ class DisjointSet {
 
     find(node) {
         if (this.parent[node] !== node) {
-        this.parent[node] = this.find(this.parent[node]);
+            this.parent[node] = this.find(this.parent[node]);
         }
         return this.parent[node];
     }
@@ -31,18 +31,18 @@ class DisjointSet {
         let rootA = this.find(a);
         let rootB = this.find(b);
         if (rootA === rootB) {
-        return false;
+            return false;
         }
 
         if (this.rank[rootA] < this.rank[rootB]) {
-        [rootA, rootB] = [rootB, rootA];
+            [rootA, rootB] = [rootB, rootA];
         }
 
         this.parent[rootB] = rootA;
         this.componentSize[rootA] += this.componentSize[rootB];
 
         if (this.rank[rootA] === this.rank[rootB]) {
-        this.rank[rootA] += 1;
+            this.rank[rootA] += 1;
         }
 
         return true;
@@ -53,11 +53,11 @@ function buildEdges(points) {
     const edges = [];
     for (let i = 0; i < points.length; i += 1) {
         for (let j = i + 1; j < points.length; j += 1) {
-        const dx = points[i][0] - points[j][0];
-        const dy = points[i][1] - points[j][1];
-        const dz = points[i][2] - points[j][2];
-        const distanceSquared = dx * dx + dy * dy + dz * dz;
-        edges.push({ distanceSquared, a: i, b: j });
+            const dx = points[i][0] - points[j][0];
+            const dy = points[i][1] - points[j][1];
+            const dz = points[i][2] - points[j][2];
+            const distanceSquared = dx * dx + dy * dy + dz * dz;
+            edges.push({ distanceSquared, a: i, b: j });
         }
     }
     edges.sort((left, right) => left.distanceSquared - right.distanceSquared);
