@@ -19,6 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "2025-day-01-part-1": "node ./2025/01/part1.js ./2025/01/input.txt"
+    "2025-day-01-part-1": "node ./2025/01/part1.js ./2025/01/input.txt",
+    "generate-posts": "node ./site/scripts/generate-blog-posts.js"
   }
 }
