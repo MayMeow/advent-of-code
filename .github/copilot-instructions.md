@@ -28,6 +28,6 @@
 - No central test runner; each puzzle is standalone.
 
 ## Documentation
-- Blog entries live under each day (`2025/08/Blog.md`). Match existing tone: friendly narrative, numbered/bulleted steps, explicit complexity section.
+- Blog entries live under each day (`2025/08/Blog.md`). Match existing tone (especially days 1-5 from the 2025 folder): friendly narrative, numbered/bulleted steps, explicit complexity section.
 - If you add a new day, mirror this structure (solver + input + sample - if missing).
 - You write blog posts only when asked; otherwise, focus on code correctness and clarity.
