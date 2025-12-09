@@ -78,10 +78,12 @@ node part1.js
 node part1.js sample.txt
 ```
 
-**Using npm scripts:**
+**Using npm scripts (if available):**
 ```bash
-# Run specific day/part combinations
+# Example: Run day 1 part 1
 npm run 2025-day-01-part-1
+
+# Note: Additional scripts can be added to package.json as needed
 ```
 
 ### PHP Solutions (2023-2024)
