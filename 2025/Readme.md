@@ -1,4 +1,4 @@
-# Advent of code 2025
+# Advent of code 2025 `Advent.js`
 
 | Day | Location               | Stars | Blog Post |
 |-----|-------------------------|-------|-----------|
@@ -10,7 +10,7 @@
 | 6   | Trash Compactor         | ⭐⭐ |           |
 | 7   | Laboratories            | ⭐⭐ |           |
 | 8   | Playground              | ⭐⭐ |           |
-| 9   |                         |       |           |
+| 9   | Movie Theater           | ⭐⭐ |           |
 | 10  |                         |       |           |
 | 11  |                         |       |           |
 | 12  |                         |       |           |
