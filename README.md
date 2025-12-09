@@ -176,7 +176,6 @@ ISC License
 
 **May Meow**
 - GitHub: [@MayMeow](https://github.com/MayMeow)
-- Email: may@maymeow.com
 
 ## 🔗 Links
 
