@@ -1,6 +1,6 @@
 # Advent of code 2025 `Advent.js`
 
-| Day | Location               | Stars | Blog Post |
+| Day | Location               | Stars | Notes |
 |-----|-------------------------|-------|-----------|
 | 1   | Secret Entrance         | ⭐⭐ |           |
 | 2   | Gift Shop               | ⭐⭐ |           |
@@ -10,19 +10,8 @@
 | 6   | Trash Compactor         | ⭐⭐ |           |
 | 7   | Laboratories            | ⭐⭐ |           |
 | 8   | Playground              | ⭐⭐ |           |
-| 9   | Movie Theater           | ⭐⭐ |           |
-| 10  |                         |       |           |
-| 11  |                         |       |           |
+| 9   | Movie Theater           | ⭐⭐ | p1: `56.27ms` p2: `117.81ms` |
+| 10  | Factory                 | ⭐⭐ | p1: `70.12ms` p2: `541.27ms` |
+| 11  | [Reactor](./11/)        | ⭐⭐ | p1: `53.48ms` p2: `54.94ms` (first tries took over 50 seconds and failed 🫤) |
 | 12  |                         |       |           |
-| 13  |                         |       |           |
-| 14  |                         |       |           |
-| 15  |                         |       |           |
-| 16  |                         |       |           |
-| 17  |                         |       |           |
-| 18  |                         |       |           |
-| 19  |                         |       |           |
-| 20  |                         |       |           |
-| 21  |                         |       |           |
-| 22  |                         |       |           |
-| 23  |                         |       |           |
-| 24  |                         |       |           |
+
