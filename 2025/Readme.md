@@ -1,4 +1,4 @@
-# Advent of code 2025 `Advent.js`
+# 🎄 Advent of code 2025 `Advent.js`
 
 | Day | Location               | Stars | Notes |
 |-----|-------------------------|-------|-----------|
@@ -11,7 +11,7 @@
 | 7   | Laboratories            | ⭐⭐ | p1: `57.55ms` p2: `55.91ms` |
 | 8   | Playground              | ⭐⭐ | p1: `533.42ms` p2: `276,96ms` |
 | 9   | Movie Theater           | ⭐⭐ | p1: `56.27ms` p2: `117.81ms` |
-| 10  | Factory                 | ⭐⭐ | p1: `70.12ms` p2: `541.27ms` |
+| 10  | [Factory](./10/)        | ⭐⭐ | p1: `70.12ms` p2: `541.27ms` |
 | 11  | [Reactor](./11/)        | ⭐⭐ | p1: `53.48ms` p2: `54.94ms` (first tries took over 50 seconds and failed 🫤) |
 | 12  |                         |       |           |
 
