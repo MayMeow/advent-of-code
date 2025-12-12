@@ -13,7 +13,7 @@
 | 9   | Movie Theater           | ⭐⭐ | p1: `56.27ms` p2: `117.81ms` |
 | 10  | [Factory](./10/)        | ⭐⭐ | p1: `70.12ms` p2: `541.27ms` |
 | 11  | [Reactor](./11/)        | ⭐⭐ | p1: `53.48ms` p2: `54.94ms` (first tries took over 50 seconds and failed 🫤) |
-| 12  |                         |       |           |
+| 12  | Christmas Tree Farm     | ⭐⭐ | p1v1: `17421ms` p1v2: `4857ms` p1v3: `14973ms` |
 
 ## Measure
 
