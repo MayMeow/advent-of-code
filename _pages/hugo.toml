@@ -1,0 +1,9 @@
+baseURL = 'https://aoc.maymeow.dev/'
+languageCode = 'en-us'
+title = '🎄 Advent of Code by May'
+theme = 'nostyleplease'
+description = 'My solutions for advent of code puzzles'
+
+[markup]
+  [markup.highlight]
+    style = 'RPGLE'

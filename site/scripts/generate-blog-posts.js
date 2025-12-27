@@ -3,7 +3,7 @@ const path = require("path");
 
 const YEAR = "2025";
 const BASE = `./${YEAR}`;
-const OUT = `./site/src/aoc/${YEAR}`;
+const OUT = `./_pages/content/posts/aoc-${YEAR}`;
 
 fs.mkdirSync(OUT, { recursive: true });
 
